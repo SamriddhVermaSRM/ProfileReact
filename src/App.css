@@ -1,0 +1,154 @@
+.App {
+  text-align: center;
+  background-image: url("./assets/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.display-picture{
+  width: 120px;
+  height: 120px;
+  border: 5px solid;
+  border-radius: 90px;
+  border-color: rgb(0, 0, 0);
+  display: flex;
+}
+
+.link-page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 700px;
+  padding: 10px;
+}
+
+.link-tab {
+  width: calc(100% - 70px);
+  max-width: 350px;
+  height: 60px;
+  border: 5px solid;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  opacity: 0.88;
+  font-family: 'Quicksand';
+  color: rgba(255, 255, 255, 0.845);
+  font-weight: 900;
+}
+
+
+
+.name {
+  font-family: 'Poppins', 'ExtraLight';
+  font-weight: 500;
+  text-align: center;
+  font-size: 50px;
+  color: red;
+  display: flex;
+}
+
+.bio
+{
+  font-family: 'Oswald', 'Oswald-ExtraLight';
+  font-style: normal;
+  font-weight: 50;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(174, 174, 202);
+  padding-top: 7px;
+  opacity: .50;
+  margin: 4px;
+}
+.header
+{
+  top: 0px;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+}
+
+.header button
+{
+  border: 0px;
+  background-color: unset;
+  color: white;
+  margin: 10px;
+}
+
+.me-h
+{
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  border: 0.5px solid black;
+  background-image: url("./assets/dp.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bad
+{
+  height: '240px';
+  width: '150px';
+  margin: '10px';
+  background-color: 'white';
+}
