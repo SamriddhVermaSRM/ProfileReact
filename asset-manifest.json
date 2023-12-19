@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ProFileReact/static/css/main.74bd90f9.css",
-    "main.js": "/ProFileReact/static/js/main.6368b4d3.js",
-    "static/js/787.e6fe0fcf.chunk.js": "/ProFileReact/static/js/787.e6fe0fcf.chunk.js",
-    "static/media/dp.webp": "/ProFileReact/static/media/dp.40b6adc80cac81bd5e99.webp",
-    "static/media/bg.webp": "/ProFileReact/static/media/bg.27e398effe3d5519cabc.webp",
-    "index.html": "/ProFileReact/index.html",
-    "main.74bd90f9.css.map": "/ProFileReact/static/css/main.74bd90f9.css.map",
-    "main.6368b4d3.js.map": "/ProFileReact/static/js/main.6368b4d3.js.map",
-    "787.e6fe0fcf.chunk.js.map": "/ProFileReact/static/js/787.e6fe0fcf.chunk.js.map"
+    "main.css": "/ProfileReact/static/css/main.460a2503.css",
+    "main.js": "/ProfileReact/static/js/main.afc47305.js",
+    "static/js/787.e6fe0fcf.chunk.js": "/ProfileReact/static/js/787.e6fe0fcf.chunk.js",
+    "static/media/dp.webp": "/ProfileReact/static/media/dp.40b6adc80cac81bd5e99.webp",
+    "static/media/bg.webp": "/ProfileReact/static/media/bg.27e398effe3d5519cabc.webp",
+    "index.html": "/ProfileReact/index.html",
+    "main.460a2503.css.map": "/ProfileReact/static/css/main.460a2503.css.map",
+    "main.afc47305.js.map": "/ProfileReact/static/js/main.afc47305.js.map",
+    "787.e6fe0fcf.chunk.js.map": "/ProfileReact/static/js/787.e6fe0fcf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74bd90f9.css",
-    "static/js/main.6368b4d3.js"
+    "static/css/main.460a2503.css",
+    "static/js/main.afc47305.js"
   ]
 }
