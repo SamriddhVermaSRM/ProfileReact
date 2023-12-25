@@ -1,0 +1,38 @@
+{
+  "project1": {
+    "images": ["/assets/Cogro/1.png","/assets/Cogro/2.png","/assets/Cogro/3.png","/assets/Cogro/4.png","/assets/Cogro/5.png","/assets/Cogro/6.png"],
+    "title": "CoGro",
+    "desc": "Made using React in HackCBS6.0",
+    "l_desc": "",
+    "tech": "React, Firebase",
+    "repo_link": "",
+    "live_link": ""
+  },
+  "project2": {
+    "images": ["/assets/DishAl/1.png","/assets/DishAl/2.png","/assets/DishAl/3.png","/assets/DishAl/4.png","/assets/DishAl/5.png","/assets/DishAl/6.png","/assets/DishAl/7.png"],
+    "title": "DishAlchemy",
+    "desc": "Made using React",
+    "l_desc": "",
+    "tech": "React, Firebase",
+    "repo_link": "",
+    "live_link": ""
+  },
+  "project3": {
+    "images": ["/assets/Dharti/1.png","/assets/Dharti/2.png","/assets/Dharti/3.png"],
+    "title": "Dharti",
+    "desc": "Made for Smart India Hackathon",
+    "l_desc": "",
+    "tech": "React, Firebase",
+    "repo_link": "",
+    "live_link": ""
+  },
+  "project4": {
+    "images": ["/assets/Pro/1.png","/assets/Pro/2.png"],
+    "title": "Personal Profile",
+    "desc": "Made using pure HTML, CSS, JS",
+    "l_desc": "",
+    "tech": "HTML, CSS, JS",
+    "repo_link": "",
+    "live_link": ""
+  }
+}

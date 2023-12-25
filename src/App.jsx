@@ -2,42 +2,11 @@ import './App.css'
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import proj from './Projects.json';
 
 
 // import dp
 import DP from './assets/dp.webp';
-
-// project images
-import pI1 from './assets/Cogro/1.png';
-import pI2 from './assets/Cogro/2.png';
-import pI3 from './assets/Cogro/3.png';
-import pI4 from './assets/Cogro/4.png';
-import pI5 from './assets/Cogro/5.png';
-import pI6 from './assets/Cogro/6.png';
-
-
-import pII1 from './assets/DishAl/1.png';
-import pII2 from './assets/DishAl/2.png';
-import pII3 from './assets/DishAl/3.png';
-import pII4 from './assets/DishAl/4.png';
-import pII5 from './assets/DishAl/5.png';
-import pII6 from './assets/DishAl/6.png';
-import pII7 from './assets/DishAl/7.png';
-
-
-import pIII1 from './assets/Dharti/1.png';
-import pIII2 from './assets/Dharti/2.png';
-import pIII3 from './assets/Dharti/3.png';
-
-
-import pIV1 from './assets/Pro/1.png'
-import pIV2 from './assets/Pro/2.png'
-
-// project image array
-const project1 = [pI1,pI2,pI3,pI4,pI5,pI6];
-const project2 = [pII1,pII2,pII3,pII4,pII5,pII6,pII7];
-const project3 = [pIII1,pIII2,pIII3]
-const project4 = [pIV1,pIV2];
 
 function App ()
 {
@@ -65,13 +34,13 @@ function Header ({ page })
 {
  return (
     <div className='header'>
-        <button className='qua-h' onClick={() => {page(<Qualifications />)}}>
+        <button name='Qualifications' className='qua-h' onClick={() => {page(<Qualifications />)}}>
             Qualifications
         </button>
-        <button className='pro-h' onClick={() => {page(<Projects />)}}>
+        <button name='Projects' className='pro-h' onClick={() => {page(<Projects />)}}>
             Projects
         </button>
-        <button className='me-h' onClick={() => {page(<Links />)}}>
+        <button name='Home Page' className='me-h' onClick={() => {page(<Links />)}}>
         </button>
     </div>
   );
@@ -142,30 +111,24 @@ function Qualifications ()
 
 function Projects ()
 {
+  const [curPro, setCurPro] = useState(null);
   return (
     <div className='slide-in-right'>
       <div className='project-page'>
-        <Project 
-          images={project1} 
-          title='CoGro' 
-          desc='Made using React in HackCBS6.0' 
-        />
-        <Project 
-          images={project2} 
-          title='DishAlchemy' 
-          desc='Made using React' 
-        />
-        <Project
-          images={project3}
-          title='Dharti'
-          desc='Made for Smart India Hackathon'
-        />
-        <Project
-          images={project4}
-          title='Personal Profile'
-          desc='Made using pure HTML, CSS, JS'
-        />
-        {/* add more Projects similarly */}
+        {curPro == null ?
+          <>
+          {Object.keys(proj).map((key, index) => (
+            <Project 
+              key={index}
+              pro={index}
+              images={proj[key].images} 
+              title={proj[key].title}
+              desc={proj[key].desc} 
+              setCurPro={setCurPro}
+            />
+          ))}
+          </> :
+           <ProjectShowcase pro={curPro} setCurPro={setCurPro} />}
       </div>
     </div>
   );
@@ -182,14 +145,14 @@ function Footer ()
   );
 }
 
-function Project ({ title, desc, images })
+function Project ({ title, desc, images, setCurPro, pro })
 {
   return (
-    <div className='project'>
+    <div className='project' onClick={() => {setCurPro("project" + (pro + 1) )}}>
       <Carousel showStatus={false} showIndicators={false} showThumbs={false} autoPlay={true} width={177} infiniteLoop={true} interval={2000}>
       {images.map((img, index) => (
           <div key={index}>
-            <img src={img} className='project-img' alt='' />
+            <img src={process.env.PUBLIC_URL + img} className='project-img' alt='' />
           </div>
         ))}
       </Carousel>
@@ -200,6 +163,45 @@ function Project ({ title, desc, images })
         {desc}
       </span>
     </div>
+  );
+}
+
+function ProjectShowcase ({ pro, setCurPro })
+{
+  return(
+  <>
+    <div className='project-sc-pg' >
+       <button className='back-btn' onClick={() => {setCurPro(null)}}>
+          Back
+        </button>
+      <div className='project-sc'>
+        <Carousel showStatus={false} showIndicators={false} showThumbs={false} width={"clamp(250px, 90%, 600px)"} autoPlay={true} infiniteLoop={true} interval={5000}>
+        {proj[pro].images.map((img, index) => (
+            <div key={index}>
+              <img src={process.env.PUBLIC_URL + img} className='project-img-sc' alt='' />
+            </div>
+          ))}
+        </Carousel>
+        <div className='project-title-sc'>
+          {proj[pro].title}
+        </div>
+        <div className='project-desc-sc'>
+          {proj[pro].l_desc}
+        </div>
+        <div className='project-tech-sc'>
+          {proj[pro].tech}
+        </div>
+        <div className='project-links-sc'>
+          <div className='project-r_link-sc'>
+            {proj[pro].repo_link}
+          </div>
+          <div className='project-l_link-sc'>
+            {proj[pro].live_link}
+          </div>
+        </div>
+      </div>  
+    </div>
+  </>
   );
 }
 
