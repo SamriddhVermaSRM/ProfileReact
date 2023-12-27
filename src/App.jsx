@@ -14,21 +14,21 @@ function App ()
   return (
       <div className="App">
         <Header page={setPage} />
-        <Content Vpage={page} />
+        {page}
         <Footer />
       </div>
   );
 }
 
-function Content ({ Vpage })
-{
-  const style={overflowY: 'auto', overflowX: 'hidden'}
-  return (
-    <div className='content' style={style}>
-      {Vpage}
-    </div>
-  );
-}
+// function Content ({ Vpage })
+// {
+//   const style={overflowY: 'auto', overflowX: 'hidden'}
+//   return (
+//     <div className='content' style={style}>
+//       {Vpage}
+//     </div>
+//   );
+// }
 
 function Header ({ page })
 {
@@ -92,8 +92,9 @@ function Boxlink ({ usefor, borc, boxcolor, href }) {
 function Qualifications () 
 {
   const style={width: '150px', height: '270px'}
+  const style2={width: '100%', height: 'calc(100vh - 90px)',display: 'flex', alignContent: 'center',justifyContent: 'center'}
   return (
-    <div className='slide-in-right'>
+    <div className='slide-in-right' style={style2}>
       <div class="badge" id="badgez">
           <a href="https://www.credly.com/badges/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197/public_url">
               <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" scrolling="no" src="//www.credly.com/embedded_badge/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
@@ -114,23 +115,23 @@ function Projects ()
   const [curPro, setCurPro] = useState(null);
   return (
     <div className='slide-in-right'>
-      <div className='project-page'>
+      
         {curPro == null ?
-          <>
-          {Object.keys(proj).map((key, index) => (
-            <Project 
-              key={index}
-              pro={index}
-              images={proj[key].images} 
-              title={proj[key].title}
-              desc={proj[key].desc} 
-              setCurPro={setCurPro}
-            />
-          ))}
-          </> :
-           <ProjectShowcase pro={curPro} setCurPro={setCurPro} />}
+          <div className='project-page'>
+            {Object.keys(proj).map((key, index) => (
+              <Project 
+                key={index}
+                pro={index}
+                images={proj[key].images} 
+                title={proj[key].title}
+                desc={proj[key].desc} 
+                setCurPro={setCurPro}
+              />
+            ))}
+          </div> : <>
+           <ProjectShowcase pro={curPro} setCurPro={setCurPro} />
+           </>}
       </div>
-    </div>
   );
 }
 
@@ -169,39 +170,38 @@ function Project ({ title, desc, images, setCurPro, pro })
 function ProjectShowcase ({ pro, setCurPro })
 {
   return(
-  <>
     <div className='project-sc-pg' >
-       <button className='back-btn' onClick={() => {setCurPro(null)}}>
+    <button className='back-btn' onClick={() => {setCurPro(null)}}>
           Back
-        </button>
+    </button>
+    
       <div className='project-sc'>
-        <Carousel showStatus={false} showIndicators={false} showThumbs={false} width={"clamp(250px, 90%, 600px)"} autoPlay={true} infiniteLoop={true} interval={5000}>
+        <Carousel showStatus={false} showIndicators={false} showThumbs={false} width={"clamp(250px, 100%, 600px)"} autoPlay={true} infiniteLoop={true} interval={5000}>
         {proj[pro].images.map((img, index) => (
             <div key={index}>
               <img src={process.env.PUBLIC_URL + img} className='project-img-sc' alt='' />
             </div>
           ))}
         </Carousel>
-        <div className='project-title-sc'>
+        <div className='project-sc-title'>
           {proj[pro].title}
         </div>
-        <div className='project-desc-sc'>
+        <div className='project-sc-desc'>
           {proj[pro].l_desc}
         </div>
-        <div className='project-tech-sc'>
+        <div className='project-sc-tech'>
           {proj[pro].tech}
         </div>
-        <div className='project-links-sc'>
-          <div className='project-r_link-sc'>
+        <div className='project-sc-links'>
+          <a href={proj[pro].repo_link} className='project-sc-r_link'>
             {proj[pro].repo_link}
-          </div>
-          <div className='project-l_link-sc'>
-            {proj[pro].live_link}
-          </div>
+          </a>
+          <a href={proj[pro].live_link} className='project-sc-l_link'>
+            {proj[pro].live_link_s}
+          </a>
         </div>
       </div>  
     </div>
-  </>
   );
 }
 

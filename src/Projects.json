@@ -3,36 +3,50 @@
     "images": ["/assets/Cogro/1.png","/assets/Cogro/2.png","/assets/Cogro/3.png","/assets/Cogro/4.png","/assets/Cogro/5.png","/assets/Cogro/6.png"],
     "title": "CoGro",
     "desc": "Made using React in HackCBS6.0",
-    "l_desc": "",
-    "tech": "React, Firebase",
-    "repo_link": "",
-    "live_link": ""
+    "l_desc": "CoGro is a website made for collaborators looking for collaborators in the same niche.",
+    "tech": "React",
+    "repo_link": "https://github.com/SamriddhVermaSRM/hackCBS6",
+    "live_link": "https://hack-cbs-6-pink.vercel.app/",
+    "live_link_s": "CoGro.com"
   },
   "project2": {
     "images": ["/assets/DishAl/1.png","/assets/DishAl/2.png","/assets/DishAl/3.png","/assets/DishAl/4.png","/assets/DishAl/5.png","/assets/DishAl/6.png","/assets/DishAl/7.png"],
     "title": "DishAlchemy",
     "desc": "Made using React",
-    "l_desc": "",
-    "tech": "React, Firebase",
-    "repo_link": "",
-    "live_link": ""
+    "l_desc": "DishAlchemy is a website where you can deep dive into what makes that dish tick.",
+    "tech": "React",
+    "repo_link": "https://github.com/SamriddhVermaSRM/Dish-Alchemy",
+    "live_link": "https://samriddhvermasrm.github.io/Dish-Alchemy/",
+    "live_link_s": "Dish-Alchemy.com"
   },
   "project3": {
     "images": ["/assets/Dharti/1.png","/assets/Dharti/2.png","/assets/Dharti/3.png"],
     "title": "Dharti",
-    "desc": "Made for Smart India Hackathon",
-    "l_desc": "",
-    "tech": "React, Firebase",
+    "desc": "Made for Smart India Hackathon, using React",
+    "l_desc": "Dharti finds you the closest E-Waste facility to get rid of your old PC parts, or anything 'E' related.",
+    "tech": "MERN",
     "repo_link": "",
-    "live_link": ""
+    "live_link": "",
+    "live_link_s": "No links as it's ongoing"
   },
   "project4": {
     "images": ["/assets/Pro/1.png","/assets/Pro/2.png"],
     "title": "Personal Profile",
     "desc": "Made using pure HTML, CSS, JS",
-    "l_desc": "",
+    "l_desc": "My first website which taught me a lot of things.",
     "tech": "HTML, CSS, JS",
-    "repo_link": "",
-    "live_link": ""
+    "repo_link": "https://github.com/SamriddhVermaSRM/Profile",
+    "live_link": "https://samriddhvermasrm.github.io/Profile/",
+    "live_link_s": "samriddhvermasrm.github.io/Profile/"
+  },
+  "project5": {
+    "images": ["/assets/Pro/1.png","/assets/Pro/2.png"],
+    "title": "Personal Portfolio",
+    "desc": "Made using React",
+    "l_desc": "Still makes me wonder why must I suffer.",
+    "tech": "React",
+    "repo_link": "https://github.com/SamriddhVermaSRM/ProfileReact",
+    "live_link": "https://samriddhverma.biz",
+    "live_link_s": "This Site"
   }
 }
