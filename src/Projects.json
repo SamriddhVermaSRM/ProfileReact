@@ -1,5 +1,5 @@
 {
-  "project1": {
+  "CoGro": {
     "images": ["/assets/Cogro/1.png","/assets/Cogro/2.png","/assets/Cogro/3.png","/assets/Cogro/4.png","/assets/Cogro/5.png","/assets/Cogro/6.png"],
     "title": "CoGro",
     "desc": "Made using React in HackCBS6.0",
@@ -9,9 +9,9 @@
     "live_link": "https://hack-cbs-6-pink.vercel.app/",
     "live_link_s": "CoGro.com"
   },
-  "project2": {
+  "DishAlchemy": {
     "images": ["/assets/DishAl/1.png","/assets/DishAl/2.png","/assets/DishAl/3.png","/assets/DishAl/4.png","/assets/DishAl/5.png","/assets/DishAl/6.png","/assets/DishAl/7.png"],
-    "title": "DishAlchemy",
+    "title": "Dish-Alchemy",
     "desc": "Made using React",
     "l_desc": "DishAlchemy is a website where you can deep dive into what makes that dish tick.",
     "tech": "React",
@@ -19,8 +19,18 @@
     "live_link": "https://samriddhvermasrm.github.io/Dish-Alchemy/",
     "live_link_s": "Dish-Alchemy.com"
   },
-  "project3": {
-    "images": ["/assets/Dharti/1.png","/assets/Dharti/2.png","/assets/Dharti/3.png"],
+  "HealSync": {
+    "images": ["/assets/Healsync/1.png","/assets/Healsync/2.png","/assets/Healsync/3.png","/assets/Healsync/4.png"],
+    "title": "Heal Sync",
+    "desc": "Made for Google's Solution Challenge",
+    "l_desc": "Healsync is a Personal Health Assistant to track your symptoms as well as get suggestions about your health, it uses Google's Gemini API as it's base to make data driven suggestions based on the weather around you, any ongoing outbreaks around you, and many more. \n It was selected in Google's Regional bootcamp as well",
+    "tech": "MERN",
+    "repo_link": "https://github.com/SamriddhVermaSRM/healsync",
+    "live_link": "https://healsync.vercel.app/",
+    "live_link_s": "healsync.com"
+},
+  "Dharti": {
+    "images": ["/assets/Healsync/1.png","/assets/Dharti/2.png","/assets/Dharti/3.png"],
     "title": "Dharti",
     "desc": "Made for Smart India Hackathon, using React",
     "l_desc": "Dharti finds you the closest E-Waste facility to get rid of your old PC parts, or anything 'E' related.",
@@ -29,7 +39,7 @@
     "live_link": "",
     "live_link_s": "No links as it's ongoing"
   },
-  "project4": {
+  "pp": {
     "images": ["/assets/Pro/1.png","/assets/Pro/2.png"],
     "title": "Personal Profile",
     "desc": "Made using pure HTML, CSS, JS",
@@ -39,7 +49,7 @@
     "live_link": "https://samriddhvermasrm.github.io/Profile/",
     "live_link_s": "samriddhvermasrm.github.io/Profile/"
   },
-  "project5": {
+  "ppr": {
     "images": ["/assets/Pro/1.png","/assets/Pro/2.png"],
     "title": "Personal Portfolio",
     "desc": "Made using React",

@@ -3,20 +3,25 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import proj from './Projects.json';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 
 
 // import dp
 import DP from './assets/dp.webp';
 
-function App ()
-{
-  const [page, setPage] = useState(<Links />);
+function App() {
   return (
-      <div className="App">
-        <Header page={setPage} />
-        {page}
-        <Footer />
-      </div>
+    <>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Links />} />
+          <Route path='/qualifications' element={<Qualifications />} />
+          <Route path='/projects' element={<Projects />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
@@ -30,45 +35,41 @@ function App ()
 //   );
 // }
 
-function Header ({ page })
-{
- return (
+function Header() {
+  return (
     <div className='header'>
-        <button name='Qualifications' className='qua-h' onClick={() => {page(<Qualifications />)}}>
-            Qualifications
-        </button>
-        <button name='Projects' className='pro-h' onClick={() => {page(<Projects />)}}>
-            Projects
-        </button>
-        <button name='Home Page' className='me-h' onClick={() => {page(<Links />)}}>
-        </button>
+      <a href='/qualifications' className='qua-h'>
+        Qualifications
+      </a>
+      <a href='/projects' className='pro-h'>
+        Projects
+      </a>
+      <a href='/' className='me-h'>
+      </a>
     </div>
   );
 }
 
 
-function Links () 
-{
+function Links() {
   return (
-    <div className='slide-in-left'>
-      <div className='link-page'>
+    <div className='link-page slide-in-left'>
       <img src={DP} className='display-picture' alt='' />
       <span className='name'>
-          Samriddh Pratap Verma
+        Samriddh Pratap Verma
       </span>
       <span className='bio'>
-          IDK what to write about.
+        IDK what to write about.
       </span>
       <Boxlink usefor="Instagram" borc="#f536b7" boxcolor="#8f3c75" href="https://instagram.com/samriddh.verma.7/" />
       <Boxlink usefor="LinkedIn" borc="#0072b1" boxcolor="#91c7e6" href="https://www.linkedin.com/in/samriddh-verma/" />
-      <Boxlink usefor="GitHub" borc="#171515" boxcolor="#635f5f" href="https://www.github.com/SamriddhVerma/" />
+      <Boxlink usefor="GitHub" borc="#171515" boxcolor="#635f5f" href="https://www.github.com/SamriddhVermaSRM/" />
       <Boxlink usefor="Twitter" borc="#00acee" boxcolor="#b5d8e6" href="https://twitter.com/samriddh_verma/" />
-      </div>
-    </div>  
+    </div>
   );
 }
 
-function Boxlink ({ usefor, borc, boxcolor, href }) {
+function Boxlink({ usefor, borc, boxcolor, href }) {
   const [hover, setHover] = React.useState(false);
 
   const style = {
@@ -76,10 +77,10 @@ function Boxlink ({ usefor, borc, boxcolor, href }) {
     backgroundColor: hover ? 'transparent' : boxcolor,
   };
 
-  return(
-    <a 
-      className='link-tab' 
-      style={style} 
+  return (
+    <a
+      className='link-tab'
+      style={style}
       href={href}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -89,54 +90,47 @@ function Boxlink ({ usefor, borc, boxcolor, href }) {
   );
 }
 
-function Qualifications () 
-{
-  const style={width: '150px', height: '270px'}
-  const style2={width: '100%', height: 'calc(100vh - 90px)',display: 'flex', alignContent: 'center',justifyContent: 'center'}
+function Qualifications() {
+  const style = { width: '150px', height: '270px' }
   return (
-    <div className='slide-in-right' style={style2}>
-      <div class="badge" id="badgez">
-          <a href="https://www.credly.com/badges/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197/public_url">
-              <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" scrolling="no" src="//www.credly.com/embedded_badge/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
-          </a>
-          <a href="https://www.credly.com/badges/0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a/public_url">
-              <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a" scrolling="no" src="//www.credly.com/embedded_badge/0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
-          </a>
-          <a href="https://www.credly.com/badges/0abf811f-0aa4-4de4-a1be-6f6e9c2458cb/public_url">
-              <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-0abf811f-0aa4-4de4-a1be-6f6e9c2458cb" scrolling="no" src="//www.credly.com/embedded_badge/0abf811f-0aa4-4de4-a1be-6f6e9c2458cb" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
-          </a>
-      </div>
+    <div className="badge slide-in-right" id="badgez">
+      <a href="https://www.credly.com/badges/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197/public_url">
+        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" scrolling="no" src="//www.credly.com/embedded_badge/d1a6d6fa-b81d-43ff-98fa-ee12b5d92197" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
+      </a>
+      <a href="https://www.credly.com/badges/0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a/public_url">
+        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a" scrolling="no" src="//www.credly.com/embedded_badge/0aceb2fc-9fda-4a39-8fa1-ed6e84991d5a" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
+      </a>
+      <a href="https://www.credly.com/badges/0abf811f-0aa4-4de4-a1be-6f6e9c2458cb/public_url">
+        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-0abf811f-0aa4-4de4-a1be-6f6e9c2458cb" scrolling="no" src="//www.credly.com/embedded_badge/0abf811f-0aa4-4de4-a1be-6f6e9c2458cb" style={style} title="View my verified achievement on Credly."></iframe><script type="text/javascript" async="" src="//cdn.credly.com/assets/utilities/embed.js"></script>
+      </a>
     </div>
   );
 }
 
-function Projects ()
-{
+function Projects() {
   const [curPro, setCurPro] = useState(null);
   return (
     <div className='slide-in-right'>
-      
-        {curPro == null ?
-          <div className='project-page'>
-            {Object.keys(proj).map((key, index) => (
-              <Project 
-                key={index}
-                pro={index}
-                images={proj[key].images} 
-                title={proj[key].title}
-                desc={proj[key].desc} 
-                setCurPro={setCurPro}
-              />
-            ))}
-          </div> : <>
-           <ProjectShowcase pro={curPro} setCurPro={setCurPro} />
-           </>}
-      </div>
+      {curPro == null ?
+        <div className='project-page'>
+          {Object.keys(proj).map((key, index) => (
+            <Project
+              key={index}
+              pro={index}
+              images={proj[key].images}
+              title={proj[key].title}
+              desc={proj[key].desc}
+              setCurPro={setCurPro}
+            />
+          ))}
+        </div> : <>
+          <ProjectShowcase pro={curPro} setCurPro={setCurPro} />
+        </>}
+    </div>
   );
 }
 
-function Footer ()
-{
+function Footer() {
   return (
     <div className='footer'>
       {/* <span className='footer-text'>
@@ -146,12 +140,11 @@ function Footer ()
   );
 }
 
-function Project ({ title, desc, images, setCurPro, pro })
-{
+function Project({ title, desc, images, setCurPro, pro }) {
   return (
-    <div className='project' onClick={() => {setCurPro("project" + (pro + 1) )}}>
+    <div className='project' onClick={() => { setCurPro("project" + (pro + 1)) }}>
       <Carousel showStatus={false} showIndicators={false} showThumbs={false} autoPlay={true} width={177} infiniteLoop={true} interval={2000}>
-      {images.map((img, index) => (
+        {images.map((img, index) => (
           <div key={index}>
             <img src={process.env.PUBLIC_URL + img} className='project-img' alt='' />
           </div>
@@ -167,17 +160,15 @@ function Project ({ title, desc, images, setCurPro, pro })
   );
 }
 
-function ProjectShowcase ({ pro, setCurPro })
-{
-  return(
+function ProjectShowcase({ pro, setCurPro }) {
+  return (
     <div className='project-sc-pg' >
-    <button className='back-btn' onClick={() => {setCurPro(null)}}>
-          Back
-    </button>
-    
+      <button className='back-btn' onClick={() => { setCurPro(null) }}>
+        Back
+      </button>
       <div className='project-sc'>
         <Carousel showStatus={false} showIndicators={false} showThumbs={false} width={"clamp(250px, 100%, 600px)"} autoPlay={true} infiniteLoop={true} interval={5000}>
-        {proj[pro].images.map((img, index) => (
+          {proj[pro].images.map((img, index) => (
             <div key={index}>
               <img src={process.env.PUBLIC_URL + img} className='project-img-sc' alt='' />
             </div>
@@ -200,7 +191,7 @@ function ProjectShowcase ({ pro, setCurPro })
             {proj[pro].live_link_s}
           </a>
         </div>
-      </div>  
+      </div>
     </div>
   );
 }
