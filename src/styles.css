@@ -18,7 +18,7 @@ body {
 	--hm-gap: 9px;
 	--hm-margin: 27px;
 	--hm-height: calc(var(--bar-height) * 3 + var(--hm-gap) * 2);
-	--x-width: calc((var(--hm-height) * 1.41421));
+	--cross-width: calc((var(--hm-height) * 1.41421));
 }
 
 a {
@@ -133,7 +133,7 @@ header {
 
 .hamburger:has(input:checked)::after {
 	rotate: -45deg;
-	width: var(--x-width);
+	width: var(--cross-width);
 	translate: 0 calc(var(--bar-height) / 2);
 	background-color: rgb(255, 255, 255);
 	cursor: pointer;
@@ -141,7 +141,7 @@ header {
 
 .hamburger:has(input:checked)::before {
 	rotate: 45deg;
-	width: var(--x-width);
+	width: var(--cross-width);
 	translate: 0 calc(var(--bar-height) / -2);
 	background-color: rgb(255, 255, 255);
 	cursor: pointer;
