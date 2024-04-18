@@ -15,18 +15,20 @@ function Header() {
                 </a>
             </header>
             <header className='mobile'>
-                <input type='checkbox' id='menu' />
-                <nav>
-                    <a href='/' className='dp'>
-                        Home
-                    </a>
-                    <a href='qualifications'>
-                        Qualifications
-                    </a>
-                    <a href='projects' >
-                        Projects
-                    </a>
-                </nav>
+                <label className="hamburger" for="menu"><input type='checkbox' id='menu' /></label>
+                <aside className='sidebar'>
+                    <nav>
+                        <a href='/'>
+                            Home
+                        </a>
+                        <a href='qualifications'>
+                            Qualifications
+                        </a>
+                        <a href='projects' >
+                            Projects
+                        </a>
+                    </nav>
+                </aside>
             </header>
         </>
     );

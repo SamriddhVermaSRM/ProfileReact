@@ -13,6 +13,11 @@ body {
 	--header-height: 90px;
 	--height-without-header: calc(100vh - var(--header-height));
 	--height-without-header-mobile: calc(100svh - var(--header-height));
+	--bar-width: clamp(40px, 5.5vw, 60px);
+	--bar-height: 6px;
+	--hm-gap: 9px;
+	--hm-margin: 27px;
+	--hm-height: calc(var(--bar-height) * 3 + var(--hm-gap) * 2);
 }
 
 a {
@@ -87,11 +92,138 @@ header {
 	display: none;
 	height: var(--header-height);
 }
+.hamburger {
+	--x-width: calc((var(--hm-height) * 1.41421356237));
+	display: flex;
+	flex-direction: column;
+	gap: var(--hm-gap);
+	position: absolute;
+	top: var(--hm-margin);
+	left: var(--hm-margin);
+	z-index: 1005;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
 
-nav {
+.hamburger::before,
+.hamburger::after,
+.hamburger input {
+	content: '';
+	transform-origin: left center;
+	width: var(--bar-width);
+	height: var(--bar-height);
+	background-color: #bcbcbc;
+	transition: all 0.2s ease-in-out;
+	border-radius: var(--bar-width);
+}
+
+.hamburger input {
+	appearance: none;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	pointer-events: none;
+}
+
+.hamburger input:checked {
+	width: 0;
+	opacity: 0;
+	background-color: rgb(255, 255, 255);
+}
+
+.hamburger:has(input:checked)::after {
+	rotate: -45deg;
+	width: var(--x-width);
+	translate: 0 calc(var(--bar-height) / 2);
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+}
+
+.hamburger:has(input:checked)::before {
+	rotate: 45deg;
+	width: var(--x-width);
+	translate: 0 calc(var(--bar-height) / -2);
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+}
+
+.hamburger:has(input:checked) ~ .sidebar {
+	translate: 0%;
+}
+
+.hamburger.hamburger:has(input:checked) {
+	height: 100dvh;
+	width: 100vw;
+	transform: translateX(calc(clamp(226px, 30vw, 400px) - 75px));
+	cursor: auto;
+}
+
+.sidebar {
+	align-self: flex-start;
+	z-index: 1004;
+	position: absolute;
+	background: #940e0e;
+	height: 100vh;
+	left: 0;
+	translate: -100%;
+	transition: translate 0.3s ease-in-out;
+	padding-top: calc(var(--hm-height) + (var(--hm-margin)) + 1rem);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar nav {
+	display: flex;
+	flex-direction: column;
+	width: clamp(240px, 30vw, 400px);
+}
+
+.sidebar nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	margin-bottom: 10px;
+	padding: 10px 10px 10px 30px;
+	border-radius: 4px;
+	transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar nav a::after {
+	content: '';
+	/* width: 100%; */
+	background-color: black;
+	/* height: 2px; */
+	transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1),
+		width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.sidebar nav a:hover {
+	background-color: #eee;
+	color: black;
+}
+
+.sidebar nav a:hover::after {
+	content: '';
+	animation: underline 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	background-color: black;
+	height: 2px;
+	width: 100%;
+}
+
+@keyframes underline {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+/* nav {
 	display: flex;
 	flex-flow: column;
-}
+} */
 
 @media (width < 480px) {
 	.mobile {
