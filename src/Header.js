@@ -21,10 +21,10 @@ function Header() {
                         <a href='/'>
                             Home
                         </a>
-                        <a href='qualifications'>
+                        <a href='/qualifications/'>
                             Qualifications
                         </a>
-                        <a href='projects' >
+                        <a href='/projects/' >
                             Projects
                         </a>
                     </nav>
