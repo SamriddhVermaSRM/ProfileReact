@@ -15,7 +15,7 @@ function Links() {
                 console.log('redirected');
                 document.querySelector('.links').classList.replace('link-animation', 'slide-out');
                 setTimeout(() => {
-                    window.location.replace('http://localhost:3000/qualifications/')
+                    window.location.replace('http://samriddhverma.biz/qualifications/')
                 }, 250);
             }
         };
