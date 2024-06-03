@@ -24,7 +24,7 @@ import Qualifications from './Qualifications.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 
 
 const routing = (
@@ -40,4 +40,4 @@ const routing = (
         </Router>
     </React.StrictMode>);
 
-ReactDOM.render(routing, document.getElementById('root'))
+createRoot(document.getElementById('root')).render(routing);

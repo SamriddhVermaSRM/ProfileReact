@@ -7,12 +7,12 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow: hidden;
 
 	margin: 0;
 	padding: 0;
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
 }
 
 code {

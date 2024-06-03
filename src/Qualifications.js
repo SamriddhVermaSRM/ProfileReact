@@ -1,6 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Qualifications() {
+
+    useEffect(() => {
+        window.scrollTo(0, 40);
+        document.querySelector('body').onscroll = function () {
+            console.log(window.scrollY);
+            if (window.scrollY == 80) {
+                console.log('redirected');
+                document.querySelector('.badge').classList.add('slide-out');
+                setTimeout(() => {
+                    window.location.replace('http://localhost:3000/projects/');
+                }, 250);
+
+            } else if (window.scrollY == 0) {
+                console.log('redirected');
+                document.querySelector('.badge').classList.add('slide-in');
+                setTimeout(() => {
+                    window.location.replace('http://localhost:3000/');
+                }, 250);
+            }
+        };
+        return () => {
+            document.querySelector('body').onscroll = null;
+        };
+    }, []);
+
+
     return (
         <>
             <div className="badge">
