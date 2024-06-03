@@ -10,14 +10,14 @@ function Qualifications() {
                 console.log('redirected');
                 document.querySelector('.badge').classList.add('slide-out');
                 setTimeout(() => {
-                    window.location.replace('http://localhost:3000/projects/');
+                    window.location.replace('http://samriddhverma.biz/projects/');
                 }, 250);
 
             } else if (window.scrollY == 0) {
                 console.log('redirected');
                 document.querySelector('.badge').classList.add('slide-in');
                 setTimeout(() => {
-                    window.location.replace('http://localhost:3000/');
+                    window.location.replace('http://samriddhverma.biz/');
                 }, 250);
             }
         };
