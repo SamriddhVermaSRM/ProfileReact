@@ -15,7 +15,7 @@ function Header() {
                 </a>
             </header>
             <header className='mobile'>
-                <label className="hamburger" htmlFor="menu"><input type='checkbox' id='menu' /></label>
+                <label className="hamburger" for="menu"><input type='checkbox' id='menu' /></label>
                 <aside className='sidebar'>
                     <nav>
                         <a href='/'>

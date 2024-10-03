@@ -19,16 +19,6 @@
     "live_link": "https://samriddhvermasrm.github.io/Dish-Alchemy/",
     "live_link_s": "Dish-Alchemy.com"
   },
-  "Cogni Care": {
-    "images": ["/assets/DishAl/1.png","/assets/DishAl/2.png","/assets/DishAl/3.png","/assets/DishAl/4.png","/assets/DishAl/5.png","/assets/DishAl/6.png","/assets/DishAl/7.png"],
-    "title": "Cogni Care",
-    "desc": "Made using Kotlin",
-    "l_desc": "CogniCare is an app that helps you keep track of your mental health, based on your brain wave activites",
-    "tech": "Kotlin",
-    "repo_link": "https://github.com/SamriddhVermaSRM/Dish-Alchemy",
-    "live_link": "https://samriddhvermasrm.github.io/Dish-Alchemy/",
-    "live_link_s": "Dish-Alchemy.com"
-  },
   "HealSync": {
     "images": ["/assets/Healsync/1.png","/assets/Healsync/2.png","/assets/Healsync/3.png","/assets/Healsync/4.png"],
     "title": "Heal Sync",

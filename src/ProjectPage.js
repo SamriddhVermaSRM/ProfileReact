@@ -1,29 +1,8 @@
 import projects from './Projects.json';
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import React, { useEffect } from 'react';
-
 
 function ProjectPage() {
-
-    useEffect(() => {
-        window.scrollTo(0, 40);
-        document.querySelector('body').onscroll = function () {
-            console.log(window.scrollY);
-            if (window.scrollY == 0) {
-                console.log('redirected');
-                document.querySelector('.project-page').classList.add('slide-out');
-                setTimeout(() => {
-                    window.location.replace('http://samriddhverma.biz/qualifications/');
-                }, 250);
-
-            }
-        };
-        return () => {
-            document.querySelector('body').onscroll = null;
-        };
-    }, []);
-
     return (
         <>
             <div className='project-page'>

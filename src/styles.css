@@ -9,14 +9,10 @@ body {
 	color: #fff;
 }
 
-body::-webkit-scrollbar {
-	width: 0;
-}
-
 :root {
 	--header-height: 90px;
-	--height-without-header: calc(100vh - var(--header-height) + 80px);
-	--height-without-header-mobile: calc(100svh - var(--header-height) + 80px);
+	--height-without-header: calc(100vh - var(--header-height));
+	--height-without-header-mobile: calc(100svh - var(--header-height));
 	--bar-width: clamp(40px, 5.5vw, 60px);
 	--bar-height: 6px;
 	--hm-gap: 9px;
@@ -36,23 +32,6 @@ a {
 	border-radius: 10px;
 }
 
-.slide-in {
-	animation: inn 300ms backwards;
-}
-
-.slide-out {
-	animation: inn 300ms;
-}
-
-@keyframes inn {
-	0% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(500px);
-	}
-}
-
 /* *************************************** */
 /* *  _    _                _            * */
 /* * | |  | |              | |           * */
@@ -63,7 +42,6 @@ a {
 /* *************************************** */
 
 header {
-	position: sticky;
 	top: 0;
 	width: 100%;
 	height: var(--header-height);
@@ -265,60 +243,6 @@ header {
 /* * |______|_|_| |_|_|\_\___/ * */
 /* ***************************** */
 
-.down-arrow {
-	height: 100px;
-}
-
-.dots {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-top: 40px;
-}
-
-/* .dots > div:nth-child(1) {
-	animation: bounce ease-in-out 2s infinite;
-}
-
-.dots > div:nth-child(2) {
-	animation: bounce ease-in-out 2s infinite;
-	animation-delay: 2s;
-}
-
-.dots > div:nth-child(3) {
-	animation: bounce ease-in-out 2s infinite;
-	animation-delay: 4s;
-} */
-
-.bounce {
-	animation: bounce 200ms ease-in-out forwards;
-}
-
-.dots > div {
-	height: 6px;
-	width: 6px;
-	border: 1px white solid;
-	border-radius: 50%;
-	background: wheat;
-}
-
-@keyframes bounce {
-	0% {
-		translate: 0 0;
-	}
-	50% {
-		translate: 0 10px;
-	}
-	100% {
-		translate: 0 0;
-	}
-}
-
-.link-box {
-	display: flex;
-	flex-direction: row;
-}
-
 .links {
 	display: flex;
 	align-items: center;
@@ -326,9 +250,6 @@ header {
 	flex-direction: column;
 	height: var(--height-without-header);
 	width: 100%;
-}
-
-.link-animation {
 	animation: links 1.2s;
 }
 
@@ -372,13 +293,10 @@ header {
 	}
 }
 
-.link-box .icon {
-	height: 60px;
-	opacity: 0.5;
-}
-
 .link-tab {
-	padding: 10px;
+	width: calc(100% - 70px);
+	max-width: 350px;
+	height: 60px;
 	border: 5px solid;
 	border-radius: 40px;
 	display: flex;
@@ -473,8 +391,7 @@ header {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	overflow: auto;
-	/* align-content: center; */
+	align-content: center;
 }
 
 @media (width < 640px) {
